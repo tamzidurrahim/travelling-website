@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 33% 97%;
+    --foreground: 150 70% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 70% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 70% 10%;
+    --primary: 162 67% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 33% 94%;
+    --secondary-foreground: 150 70% 10%;
+    --muted: 150 20% 92%;
+    --muted-foreground: 150 10% 40%;
+    --accent: 162 67% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 30% 85%;
+    --input: 150 30% 85%;
+    --ring: 162 67% 47%;
+    --radius: 0.75rem;
+    
+    --emerald: #27c79b;
+    --emerald-dark: #052d1d;
+    --off-white: #f0faf6;
+    --light-green: #e8f5f0;
+    --border-green: #cbe7de;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--emerald-dark);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-body {
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .font-accent {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .text-emerald {
+    color: var(--emerald);
+  }
+  
+  .text-emerald-dark {
+    color: var(--emerald-dark);
+  }
+  
+  .bg-emerald {
+    background-color: var(--emerald);
+  }
+  
+  .bg-emerald-dark {
+    background-color: var(--emerald-dark);
+  }
+  
+  .bg-off-white {
+    background-color: var(--off-white);
+  }
+  
+  .bg-light-green {
+    background-color: var(--light-green);
+  }
+  
+  .border-emerald {
+    border-color: var(--emerald);
+  }
+  
+  .border-green-light {
+    border-color: var(--border-green);
+  }
+  
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 20px rgba(5, 45, 29, 0.08);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: 0 8px 30px rgba(5, 45, 29, 0.15);
+  }
+  
+  .polaroid {
+    background: white;
+    padding: 12px 12px 40px 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-primary {
+    @apply bg-emerald text-white px-6 py-3 rounded-full font-medium transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-emerald-dark transform -translate-y-0.5;
+    box-shadow: 0 6px 20px rgba(39, 199, 155, 0.4);
+  }
+  
+  .btn-outline {
+    @apply border-2 border-emerald text-emerald px-6 py-3 rounded-full font-medium transition-all duration-300 bg-transparent;
+  }
+  
+  .btn-outline:hover {
+    @apply bg-emerald text-white;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+  
+  .image-hover-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .image-hover-zoom img {
+    @apply transition-transform duration-500 ease-out;
+  }
+  
+  .image-hover-zoom:hover img {
+    @apply scale-110;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar for inspiration gallery */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--light-green);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--emerald);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald-dark);
+}
