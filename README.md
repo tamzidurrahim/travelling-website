@@ -29,4 +29,4 @@ npm run dev
 Then open your browser at `http://localhost:5173`
 
 ## 🌐 Live Demo
-> Coming soon — will be deployed on GitHub Pages
+[View Live Site](https://travelinbangladesh.netlify.app)
